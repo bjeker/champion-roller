@@ -75,3 +75,8 @@ img {
 .championImage {
   margin-top: 5em;
 }
+
+li {
+  width: 15em;
+  margin: 0 auto;
+}
