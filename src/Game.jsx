@@ -1,6 +1,6 @@
 import { useState } from "react"
-import jinxImage from 'src/assets/jinx.jpg';
-import jhinImage from 'src/assets/jhin.jpg';
+import jinxImage from './assets/jinx.jpg';
+import jhinImage from './assets/jhin.jpg';
 
 function Game() {
   const [roll, setRoll] = useState(0)
