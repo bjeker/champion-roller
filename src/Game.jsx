@@ -48,7 +48,9 @@ function Game() {
           Reset Champion Rolls
         </button>
         <br></br>
-        <img src={championImages[random].title} alt={champions[random].title}/>
+        <div className="championImage">
+          <img src={championImages[random].title} alt={champions[random].title}/>
+        </div>
       </div>
     </>
   )
