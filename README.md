@@ -1,3 +1,3 @@
-# Web App Game
+# Champion Roller
 
-A web app game to learn React, web app security, and game ai algorithms.
+A random champion roller for league of legends in a web application.
