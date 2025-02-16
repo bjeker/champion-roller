@@ -2,10 +2,16 @@ import { useState } from "react"
 
 function Game() {
   const [roll, setRoll] = useState(0)
+  const [randChamp, setRandChamp] = useState(null)
 
   const champions = [
     { title: 'Jinx', id: 1},
-    { title: 'Jhin', id: 2},
+    { title: 'Jhin', id: 2}
+  ]
+
+  const championImages = [
+    {title: 'src/assets/jhin.jpg', id: 1},
+    {title: 'src/assets/jinx.jpg', id: 2}
   ]
 
   const listChampions = champions.map(champion =>
@@ -13,8 +19,6 @@ function Game() {
       {champion.title}
     </li>
   )
-
-  const [randChamp, setRandChamp] = useState(null)
   
   let random = Math.floor(Math.random() * listChampions.length)
 
@@ -43,6 +47,8 @@ function Game() {
         }}>
           Reset Champion Rolls
         </button>
+        <br></br>
+        <img src={championImages[random].title} alt={champions[random].title}/>
       </div>
     </>
   )
