@@ -1,12 +1,14 @@
 import { useState } from "react"
+import jinxImage from 'src/assets/jinx.jpg';
+import jhinImage from 'src/assets/jhin.jpg';
 
 function Game() {
   const [roll, setRoll] = useState(0)
   const [randChamp, setRandChamp] = useState(0)
 
   const champions = [
-    { title: 'Jinx', id: 1, img: 'src/assets/jinx.jpg'},
-    { title: 'Jhin', id: 2, img: 'src/assets/jhin.jpg'}
+    { title: 'Jinx', id: 1, img: jinxImage},
+    { title: 'Jhin', id: 2, img: jhinImage}
   ]
 
   let listChampions = champions.map(champion =>
