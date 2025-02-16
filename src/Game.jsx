@@ -41,6 +41,13 @@ function Game() {
       }}>
         Random Champion: {randChamp} Rolls: {roll}
       </button>
+      <br></br>
+      <button onClick={() => {
+        setRandChamp(null)
+        setRoll(0);
+      }}>
+        Reset Champion Rolls
+      </button>
     </>
   )
 }
