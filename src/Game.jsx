@@ -2,30 +2,20 @@ import { useState } from "react"
 
 function Game() {
   const [roll, setRoll] = useState(0)
-  const [randChamp, setRandChamp] = useState(null)
+  const [randChamp, setRandChamp] = useState(0)
 
   const champions = [
-    { title: 'Jinx', id: 1},
-    { title: 'Jhin', id: 2}
+    { title: 'Jinx', id: 1, img: 'src/assets/jinx.jpg'},
+    { title: 'Jhin', id: 2, img: 'src/assets/jhin.jpg'}
   ]
 
-  const championImages = [
-    {title: 'src/assets/jhin.jpg', id: 1},
-    {title: 'src/assets/jinx.jpg', id: 2}
-  ]
-
-  const listChampions = champions.map(champion =>
+  let listChampions = champions.map(champion =>
     <li key={champion.id}>
       {champion.title}
     </li>
   )
   
-  let random = Math.floor(Math.random() * listChampions.length)
-  let image;
-
-  if (randChamp) {
-    image = <img src={championImages[random].title} alt={champions[random].title}/>
-  }
+  const random = Math.floor(Math.random() * listChampions.length)
 
   return (
     <>
@@ -40,21 +30,21 @@ function Game() {
       </div>
       <div>
         <button onClick={() => {
-          setRandChamp(champions[random].title);
+          setRandChamp(random);
           setRoll((roll) => roll + 1);
         }}>
-          Random Champion: {randChamp} Rolls: {roll}
+          Random Champion: {champions[randChamp].title} Rolls: {roll}
         </button>
         <br></br>
         <button onClick={() => {
-          setRandChamp(null)
+          setRandChamp(0)
           setRoll(0);
         }}>
           Reset Champion Rolls
         </button>
         <br></br>
         <div className="championImage">
-          {image}
+          <img src={champions[randChamp].img} alt={champions[randChamp].title}/>
         </div>
       </div>
     </>
