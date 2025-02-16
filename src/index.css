@@ -73,10 +73,14 @@ img {
 }
 
 .championImage {
-  margin-top: 5em;
+  margin-top: 2em;
 }
 
 li {
   width: 15em;
   margin: 0 auto;
+}
+
+button {
+  margin-top: 0.5em;
 }
