@@ -1,7 +1,6 @@
 import { useState } from "react"
 
 function Game() {
-  const [count, setCount] = useState(0)
   const [roll, setRoll] = useState(0)
 
   const champions = [
@@ -22,32 +21,29 @@ function Game() {
   return (
     <>
       <div>
+        <h1>
+          League of Legends Random Champion Roller
+        </h1>
         <p>
-          Hello World.
+          Roll for a random champion to play.
         </p>
+        <ul>{listChampions}</ul>
       </div>
-      <button onClick={() => setCount((count) => count + 1)}>
-        Clicks: {count}
-      </button>
-      <br></br>
-      <button onClick={() => setCount(0)}>
-        Reset
-      </button>
-      <br></br>
-      <ul>{listChampions}</ul>
-      <button onClick={() => {
-        setRandChamp(champions[random].title);
-        setRoll((roll) => roll + 1);
-      }}>
-        Random Champion: {randChamp} Rolls: {roll}
-      </button>
-      <br></br>
-      <button onClick={() => {
-        setRandChamp(null)
-        setRoll(0);
-      }}>
-        Reset Champion Rolls
-      </button>
+      <div>
+        <button onClick={() => {
+          setRandChamp(champions[random].title);
+          setRoll((roll) => roll + 1);
+        }}>
+          Random Champion: {randChamp} Rolls: {roll}
+        </button>
+        <br></br>
+        <button onClick={() => {
+          setRandChamp(null)
+          setRoll(0);
+        }}>
+          Reset Champion Rolls
+        </button>
+      </div>
     </>
   )
 }
