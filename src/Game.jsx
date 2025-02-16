@@ -21,6 +21,11 @@ function Game() {
   )
   
   let random = Math.floor(Math.random() * listChampions.length)
+  let image;
+
+  if (randChamp) {
+    image = <img src={championImages[random].title} alt={champions[random].title}/>
+  }
 
   return (
     <>
@@ -49,7 +54,7 @@ function Game() {
         </button>
         <br></br>
         <div className="championImage">
-          <img src={championImages[random].title} alt={champions[random].title}/>
+          {image}
         </div>
       </div>
     </>
